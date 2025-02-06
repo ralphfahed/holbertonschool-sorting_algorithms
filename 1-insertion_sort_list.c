@@ -7,7 +7,7 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	tablist_t *current, *key, *temp;
+	listint_t *current, *key, *temp;
 
 	if (!list || !*list || !(*list)->next)
 		return;
