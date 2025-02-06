@@ -1,14 +1,15 @@
+#include "sort.h"
 #include <stdio.h>
 
 /**
- * bubble_sort - Sorts an array of integers in ascending order using the
- *               Bubble sort algorithm
- * @array: Pointer to the array of integers
- * @size: The size of the array
+ * bubble_sort - Sorts an array of integers in ascending order using the Bubble
+ *               Sort algorithm.
+ * @array: The array to be sorted.
+ * @size: The size of the array.
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, j, temp, k;  /* Declare k here with i, j, temp */
+	int i, j, temp;
 
 	for (i = 0; i < size - 1; i++)
 	{
@@ -16,16 +17,13 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[j] > array[j + 1])
 			{
+				/* Swap elements */
 				temp = array[j];
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
 
-				/* Print the array after every swap */
-				for (k = 0; k < size; k++)  /* 'k' is now declared at the top */
-				{
-					printf("%d ", array[k]);
-				}
-				printf("\n");
+				/* Print the array after each swap */
+				print_array(array, size);
 			}
 		}
 	}
